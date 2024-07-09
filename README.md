@@ -1,65 +1,117 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Vote-X: An E-voting Web Application Based on Blockchain Technology
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Vote-x is a web-based e-voting system that uses blockchain technology, which offers a decentralized and immutable ledger, to the electronic voting system to securely store, display election results that are tamper proof.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- User Authentication: Secure user authentication to ensure that only authorized voters can vote.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Email Verification: Email verification is implemented to prevent fraudulent registrations.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Candidate Registration: Candidates were added and displayed for voters to see.
 
-## Learning Laravel
+- Adding Election Module: Election was created with a timed duration and expires after a certain time.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Voter Registration and Authentication: Voters are registered using MetaMask to ensure they do not vote multiple times.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Voting Module: Voters can vote for their respective candidates securely.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Technologies Incorporated
 
-## Laravel Sponsors
+- Laravel: Backend framework for building the application.
+- Node.js: Used for handling real-time features.
+- Composer: Dependency manager for PHP.
+- NPM: Package manager for Node.js.
+- MetaMask: used to register voters and ensure that they do not vote multiple times.
+- Ganache: provided a development enviroment for testing and deploying the smart contract.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Installation
 
-### Premium Partners
+### Prerequisites
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- PHP >= 10.48.10
+- Composer
+- Node.js
+- MySQL Workbench
+- Git
+- Metamask
+- Ganache
 
-## Contributing
+### STEPS
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### 1. Clone the Repository
 
-## Code of Conduct
+Run the command: git clone <https://github.com/MICR-21/Vote-X.git>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### 2. Install PHP Dependancies
+  
+Run command: composer update
 
-## Security Vulnerabilities
+#### 3. Copy environment file
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+run the code: cp .env.example .env
+
+#### 4. Generate application key
+
+Use code: php artisan key:generate
+
+#### 5. Install Node.js dependencies
+
+Use code: npm install
+
+#### 6. Set up database
+
+Create a database and update the .env file with your database credentials.
+Run migrations to set up the database tables.
+
+Run migration code: php artisan migrate
+
+#### 7. Installing MetaMask
+
+To install MetaMask on google Chrome, go to the chrome webstore and Click 'Add to Chrome' and follow the instructions to install the extension.
+
+To install on Brave, you only got to settings to enable it since it is already built into the Brave browser.
+
+To install it on Firefox, go to the firefox Add-ons Store and click ' Add to Firefox' and follow the instructions to install the extension.
+
+##### 7.1 Set Up MetaMask
+
+- Open the Meta Mask extension in your browser.
+- Click get started.
+- If you have an existing wallet, you can import it using your seed phrase. Otherwise, Create a new wallet by following the on-screen instructions.
+- Securely store your seed phrase as it is crucial for wallet recovery.
+
+
+#### 8. Intalling and Running Ganache
+
+To  install ganache you can download  the [Ganache website](https://archive.trufflesuite.com/ganache/): or
+
+run the following command to install it : npm install -g ganache-cli
+
+To run the ganache, run the command: ganache-cli
+or if your using the application open the GUI application.
+
+#### 8. Run the application
+
+Use code: php artisan serve
+
+#### 10. Run Node.js server
+
+use code: node server.js
+
+### How to Access the Application
+
+- Register an account: Visit the registration page and create an account.
+
+- Email Verification: Verify your email by clicking on the link sent to your email address.
+- Login: Log in to the application using your credentials.
+- Contributions:
+To contribute, follow these steps below:
+
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Submit a pull request.
 
 ## License
 
