@@ -25,7 +25,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="col-md-3">
                         <ul class="navbar-nav w-100">
                             <li class="nav-item w-100">
@@ -54,7 +54,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </form>
 
@@ -99,8 +99,9 @@
                                             <td style="color:white;">
                                                 <a href="{{ url('admin/elections/edit', $value->id) }}"
                                                     class="btn btn-primary">Edit</a>
-                                                <a href="{{ url('admin/elections/delete', $value->id) }}"
-                                                    class="btn btn-danger">Delete</a>
+                                                    <a href="{{ url('admin/elections/delete', $value->id) }}"
+                                                        class="btn btn-danger"
+                                                        onclick="return confirm('Are you sure you want to delete this election?')">Delete</a>
                                             </td>
 
                                         </tr>

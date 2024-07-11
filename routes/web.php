@@ -59,8 +59,8 @@ Route::middleware([AdminMiddleware::class])->group(function(){
     Route::post('/admin/candidate/add',[CandidateController::class,'addcandidate']);
     // Route::get('/admin/user/list',[UserController::class,'userlist']);
     Route::get('/admin/candidate/edit/{id}',[CandidateController::class, 'candidateedit']);
-    Route::get('/admin/candidate/votes/{id}',[CandidateController::class, 'candidatevotes']);
     Route::post('admin/candidate/edit/{id}', [CandidateController::class, 'updatecandidate']);
+    Route::get('/admin/candidate/votes/{id}',[CandidateController::class, 'candidatevotes']);
     Route::get('admin/candidate/delete/{id}', [CandidateController::class, 'deletecandidate']);
 
 
@@ -71,10 +71,9 @@ Route::middleware([AdminMiddleware::class])->group(function(){
     Route::get('/admin/elections/add',[ElectionController::class,'addelectionroute']);
     Route::post('/admin/elections/add',[ElectionController::class,'addelection']);
     // Route::get('/admin/user/list',[UserController::class,'userlist']);
-    Route::get('/admin/elections/edit/{id}',[ElectionController::class, 'electionedit']);
-    Route::post('admin/elections/edit/{id}', [ElectionController::class, 'updateelection']);
+    Route::get('admin/elections/edit/{id}', [ElectionController::class, 'electionedit']);
+    Route::post('admin/elections/update/{id}', [ElectionController::class, 'updateelection']);
     Route::get('admin/elections/delete/{id}', [ElectionController::class, 'deleteelection']);
-
 
     //user routes
     Route::get('/admin/user/list',[UserController::class,'userlist']);
@@ -84,6 +83,7 @@ Route::middleware([AdminMiddleware::class])->group(function(){
     Route::get('/admin/user/edit/{id}',[UserController::class, 'useredit']);
     Route::post('admin/user/edit/{id}', [UserController::class, 'updateuser']);
     Route::get('admin/user/delete/{id}', [UserController::class, 'deleteuser']);
+    Route::get('/admin/dashboard', [ElectionController::class, 'dashboard'])->name('admin.dashboard');
 
 
 });
@@ -92,4 +92,6 @@ Route::middleware([UserMiddleware::class])->group(function(){
     Route::get('/user/dashboard',[AuthController::class,'userdashboard']);
     Route::get('/user/voting/vote/{id}',[UserController::class, 'uservote']);
     Route::post('/user/voting/vote/{id}',[UserController::class, 'vote']);
+    Route::get('admin/candidate/list/{election_id}', [UserController::class, 'electionCandidates'])->name('candidate.list');
+
 });

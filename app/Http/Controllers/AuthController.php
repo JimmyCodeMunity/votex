@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CandidateModel;
+use App\Models\ElectionModel; // Ensure you have an ElectionModel
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ForgotPassword;
+use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
@@ -20,9 +22,27 @@ class AuthController extends Controller
         return view('admin.dashboard',$data);
     }
     public function userdashboard(){
-        $data['getUsers'] = User::getUsers();
-        $data['getCandidates'] = CandidateModel::getUnvotedCandidates();
-        return view('user.dashboard',$data);
+        Log::info('User dashboard accessed by user: ' . Auth::user()->id);
+
+        try {
+            $data['getElections'] = ElectionModel::all(); // Fetch all elections
+            Log::info('Elections fetched successfully.', ['elections' => $data['getElections']]);
+        } catch (\Exception $e) {
+            Log::error('Error fetching elections: ' . $e->getMessage());
+            return redirect()->back()->withErrors('Error fetching elections.');
+        }
+
+        return view('user.dashboard', $data);
+    }
+    public function electionCandidates($id){
+        $data['getElections'] = ElectionModel::all();
+        $data['getCandidates'] = CandidateModel::where('election_id', $id)->get(); // Fixed 'election' to 'election_id'
+        $data['selectedElection'] = ElectionModel::find($id);
+        return view('user.dashboard', $data);
+    }
+    public function uservote($id){
+        $data['getRecord'] = CandidateModel::getSingle($id);
+        return view('user.voting.vote',$data);
     }
 
     public function createaccount(){
@@ -74,7 +94,7 @@ class AuthController extends Controller
         // 'email' => 'required|email|unique:users,email',
         // 'voter_id' => 'required|unique:users,voter_id',
         // ]);
-        
+
         $user->email = trim($request->email);
         $user->password = Hash::make($request->password);
         $user->voter_id = trim($request->voter_id);
@@ -100,7 +120,7 @@ class AuthController extends Controller
 
     public function PostForgotPassword(Request $request){
         // dd($request->all());
-        
+
         $user = User::getEmailSingle($request->email);
         // dd($getEmailSingle);
         if(!empty($user)){

@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Support\Facades\Request;
 
 class CandidateModel extends Model
@@ -29,6 +31,17 @@ class CandidateModel extends Model
         $return = $return->orderBy('id', 'desc')->paginate(5);
 
         return $return;
+    }
+
+    static public function getCandidatesWithVoteCounts($electionId)
+    {
+        return self::select('candidates.*', DB::raw('COUNT(votes.id) as vote_count'))
+            ->leftJoin('votes', 'candidates.id', '=', 'votes.candidate_id')
+            ->where('candidates.election', '=', $electionId)
+            ->where('candidates.is_delete', '=', 0)
+            ->groupBy('candidates.id')
+            ->orderBy('vote_count', 'desc')
+            ->get();
     }
 
     static public function getUnvotedCandidates()

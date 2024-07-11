@@ -31,78 +31,8 @@
                                             placeholder="Username">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Insurance <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" required value="{{ old('insurance') }}" style="color:white"
-                                            class="form-control" name="insurance" id="exampleInputUsername1"
-                                            placeholder="Insurance">
-                                    </div>
-                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Age <span
-                                                class="text-danger">*</span> </label>
-                                        <input type="text" value="{{ old('age') }}" style="color:white"
-                                            class="form-control" name="age" required id="exampleInputUsername1"
-                                            placeholder="Age">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Allergies <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" required value="{{ old('allergies') }}" style="color:white"
-                                            class="form-control" name="allergies" id="exampleInputUsername1"
-                                            placeholder="Roll Number">
-                                    </div>
-                                </div>
                             </div>
-                            
-
-                            <div class="row">
-                                <!-- <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">DOB <span class="text-danger">*</span> </label>
-                                        <input type="date" value="{{ old('date_of_birth') }}" style="color:white"
-                                            class="form-control" name="date_of_birth" required id="exampleInputUsername1"
-                                            placeholder="Date Of Birth">
-                                    </div>
-                                </div> -->
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Blood Pressure <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" required value="{{ old('blood_pressure') }}" style="color:white"
-                                            class="form-control" name="blood_pressure" id="exampleInputUsername1"
-                                            placeholder="Blood Pressure">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Address <span class="text-danger">*</span>
-                                        </label>
-                                        <input type="text" value="{{ old('address') }}" style="color:white"
-                                            class="form-control" name="address" required id="exampleInputUsername1"
-                                            placeholder="Address">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Phone Number <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" required value="{{ old('contact') }}"
-                                            style="color:white" class="form-control" name="contact"
-                                            id="exampleInputUsername1" placeholder="Mobile Number">
-                                    </div>
-                                </div>
-                            </div>
-                            
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
@@ -113,40 +43,8 @@
                                             placeholder="">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Blood Type <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" required value="{{ old('blood_type') }}"
-                                            style="color:white" class="form-control" name="blood_type"
-                                            id="exampleInputUsername1" placeholder="Blood Group">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Height <span class="text-danger">*</span>
-                                        </label>
-                                        <input type="number" value="{{ old('height') }}" style="color:white"
-                                            class="form-control" name="height" required id="exampleInputUsername1"
-                                            placeholder="Height">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Weight <span
-                                                class="text-danger">*</span></label>
-                                        <input type="number" required value="{{ old('weight') }}" style="color:white"
-                                            class="form-control" name="weight" id="exampleInputUsername1"
-                                            placeholder="Weight">
-                                    </div>
-                                </div>
                             </div>
                             <hr>
-
-                            
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>

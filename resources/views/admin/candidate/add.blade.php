@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 
@@ -41,10 +42,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
 
-                            
-                            
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
@@ -70,20 +68,13 @@
                                     <select name="election" style="color:white" class="form-control" id="exampleInputUsername1">
                                         <option value="" class="form-control">Select Election</option>
                                         @foreach ($getElections as $election )
-                                        <option value="{{$election->id}}" class="form-control">{{$election->name}}</option>
+                                            <option value="{{$election->id}}" class="form-control">{{$election->name}}</option>
                                         @endforeach
-                                        
                                     </select>
+
                                 </div>
                             </div>
                             <hr>
-
-                            
-
-                            
-                            
-
-
                             <button type="submit" class="btn btn-primary me-2">Submit</button>
                             <button class="btn btn-dark"><a href="{{ url('admin/admin/list') }}"
                                     class="nav-link">Cancel</a></button>

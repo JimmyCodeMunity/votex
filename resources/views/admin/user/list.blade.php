@@ -53,7 +53,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </form>
 
@@ -68,16 +68,16 @@
 
                     <div class="card-body">
                         <h4 class="card-title">Students List(Total: {{ $getRecord->total() }})</h4>
-                        <div class="col-sm-2">
+                        {{-- <div class="col-sm-2">
                             <a class="nav-link btn btn-success create-new-button text-black"
                                 href="{{ url('admin/user/add') }}">+ Add new User</a>
-                        </div>
+                        </div> --}}
 
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                       
+
                                         <th> Username </th>
                                         <th> Email </th>
                                         <th> Created_date </th>
@@ -88,8 +88,6 @@
                                 <tbody>
                                     @foreach ($getRecord as $value)
                                         <tr>
-
-                                             
                                             <td style="color:white;"> {{ $value->name }} </td>
 
                                             <td style="color:white;"> {{ $value->email }} </td>

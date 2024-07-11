@@ -6,10 +6,7 @@
         <div class="page-header">
             <h3 class="page-title"> Candidates </h3>
             <nav aria-label="breadcrumb">
-                <!-- <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
-                </ol> -->
+
             </nav>
         </div>
         <div class="row">
@@ -53,7 +50,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </form>
 
@@ -89,8 +86,8 @@
                                     @foreach ($getRecord as $value)
                                         <tr>
 
-                                             <td style="color:white;"> <img class="img-xs rounded-circle" 
-     src="{{ $value->profile_pic ? asset($value->profile_pic) : asset('images/happy.png') }}" 
+                                             <td style="color:white;"> <img class="img-xs rounded-circle"
+     src="{{ $value->profile_pic ? asset($value->profile_pic) : asset('images/happy.png') }}"
      alt=""> </td>
                                             <td style="color:white;"> {{ $value->name }} </td>
 
@@ -102,7 +99,7 @@
                                                     class="btn btn-primary">View Votes</a>
                                                 <a href="{{ url('admin/candidate/edit', $value->id) }}"
                                                     class="btn btn-primary">Edit</a>
-                                                <a href="{{ url('admin/user/delete', $value->id) }}"
+                                                <a href="{{ url('admin/candidate/delete', $value->id) }}"
                                                     class="btn btn-danger">Delete</a>
                                             </td>
 

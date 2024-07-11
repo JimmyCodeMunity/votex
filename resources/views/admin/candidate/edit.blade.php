@@ -41,12 +41,22 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Profile Pic<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="file" value="{{ old('profile_pic') }}" style="color:white"
+                                        class="form-control" name="profile_pic" id="exampleInputUsername1"
+                                        placeholder="">
+                                </div>
+                        </div>
 
-                            
-                            
+
+
+
+
                             <div class="row">
-                                
+
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email address</label>
@@ -64,20 +74,20 @@
                                         @foreach ($getElections as $election )
                                         <option value="{{$election->id}}" class="form-control">{{$election->name}}</option>
                                         @endforeach
-                                        
+
                                     </select>
                                 </div>
                             </div>
                             <hr>
 
-                            
 
-                            
-                            
+
+
+
 
 
                             <button type="submit" class="btn btn-primary me-2">Submit</button>
-                            <button class="btn btn-dark"><a href="{{ url('admin/admin/list') }}"
+                            <button class="btn btn-dark"><a href="{{ url('admin/candidate/list') }}"
                                     class="nav-link">Cancel</a></button>
                         </form>
                     </div>

@@ -1,23 +1,12 @@
 @extends('layouts.app')
-
-
 @section('content')
     <div class="content-wrapper">
-        <div class="page-header">
-            <h3 class="page-title"> Form elements </h3>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Form elements</li>
-                </ol>
-            </nav>
-        </div>
         <div class="row">
             <div class="col-md-8 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Update Admin</h4>
-                        
+
                         <form class="forms-sample" action="" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">
@@ -43,19 +32,19 @@
                                             class="form-control" name="profile_pic" id="exampleInputUsername1"
                                             placeholder="">
                                     </div>
-                                </div>
-                            
-                            
+                            </div>
+
+
                             <button type="submit" class="btn btn-primary me-2">Submit</button>
                             <button class="btn btn-dark"><a href="{{url('admin/admin/list')}}" class="nav-link">Cancel</a></button>
                         </form>
                     </div>
                 </div>
             </div>
-            
-            
-            
-            
+
+
+
+
         </div>
     </div>
 @endsection

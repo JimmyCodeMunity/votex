@@ -12,8 +12,8 @@
             <div class="profile-desc">
                 <div class="profile-pic">
                     <div class="count-indicator">
-                    <img class="img-xs rounded-circle" 
-     src="{{ Auth::user()->profile_pic ? asset(Auth::user()->profile_pic) : asset('images/happy.png') }}" 
+                    <img class="img-xs rounded-circle"
+     src="{{ Auth::user()->profile_pic ? asset(Auth::user()->profile_pic) : asset('images/happy.png') }}"
      alt="">
 
                         <span class="count bg-success"></span>
@@ -90,16 +90,7 @@
                     <span class="menu-title">View Admins</span>
                 </a>
             </li>
-            
-            <!-- <li class="nav-item menu-items">
-                <a class="nav-link @if (Request::segment(2) == 'emergencies') active @endif"
-                    href="{{ url('admin/assignemergencies/list') }}">
-                    <span class="menu-icon">
-                        <i class="mdi mdi-speedometer"></i>
-                    </span>
-                    <span class="menu-title">Assign Emergency</span>
-                </a>
-            </li> -->
+
             <li class="nav-item menu-items">
                 <a class="nav-link @if (Request::segment(3) == 'admin') active @endif"
                     href="{{ url('admin/candidate/list') }}">
@@ -131,15 +122,15 @@
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link @if (Request::segment(2) == 'admin') active @endif"
                                 href="{{ url('admin/candidate/add') }}">Add Candidate</a></li>
-                        
+
                         <li class="nav-item"> <a class="nav-link @if (Request::segment(2) == 'subject') active @endif""
                                 href="{{ url('admin/admin/add') }}">Add Admin</a>
                         </li>
-                       
+
                     </ul>
                 </div>
             </li>
-           
+
             <!-- <li class="nav-item menu-items">
                 <a class="nav-link @if (Request::segment(1) == 'admin') active @endif"
                     href="pages/tables/basic-table.html">
@@ -149,7 +140,7 @@
                     <span class="menu-title">Reports</span>
                 </a>
             </li> -->
-            
+
             <li class="nav-item menu-items">
                 <a class="nav-link @if (Request::segment(3) == 'assignedlist') active @endif" href="{{url('admin/user/list')}}">
                     <span class="menu-icon">
@@ -181,13 +172,13 @@
                             </a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ url('admin/change_password') }}"> Change
                                 Password </a></li>
-                        
+
                         <li class="nav-item"> <a class="nav-link" href="{{ url('logout') }}"> Logout </a></li>
                         </li>
                     </ul>
                 </div>
             </li> -->
-            
+
         @elseif(Auth::user()->user_type == 2)
             <li class="nav-item menu-items">
                 <a class="nav-link" href="{{ url('admin/dashboard') }}">
@@ -197,11 +188,11 @@
                     <span class="menu-title">Dashboard</span>
                 </a>
             </li>
-            
 
-           
-            
-            
+
+
+
+
             <!-- <li class="nav-item menu-items">
                 <a class="nav-link" href="pages/icons/mdi.html">
                     <span class="menu-icon">
@@ -227,12 +218,12 @@
                                 Password </a></li>
                                 <li class="nav-item"> <a class="nav-link"  href="{{ url('logout') }}"> Logout
                                  </a></li>
-                        
+
                         </li>
                     </ul>
                 </div>
             </li> -->
-           
+
         @elseif(Auth::user()->user_type == 3)
             <li class="nav-item menu-items">
                 <a class="nav-link" href="{{ url('user/dashboard') }}">
@@ -252,7 +243,7 @@
             </li> --}}
 
 
-            
+
             <!-- <li class="nav-item menu-items">
                 <a class="nav-link @if (Request::segment(1) == 'admin') active @endif" data-bs-toggle="collapse"
                     href="#auth" aria-expanded="false" aria-controls="auth">
@@ -270,12 +261,12 @@
                                 Password </a></li>
                         <li class="nav-item"> <a class="nav-link"  href="{{ url('logout') }}"> Logout
                                  </a></li>
-                        
+
                         </li>
                     </ul>
                 </div>
             </li> -->
-            
+
         @endif
 
     </ul>
@@ -300,14 +291,14 @@
                 </li>
             </ul>
             <ul class="navbar-nav navbar-nav-right">
-                
-                
-                
+
+
+
                 <li class="nav-item dropdown">
                     <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                         <div class="navbar-profile">
-                        <img class="img-xs rounded-circle" 
-     src="{{ Auth::user()->profile_pic ? asset(Auth::user()->profile_pic) : asset('images/happy.png') }}" 
+                        <img class="img-xs rounded-circle"
+     src="{{ Auth::user()->profile_pic ? asset(Auth::user()->profile_pic) : asset('images/happy.png') }}"
      alt="">
                             <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ Auth::user()->name }}</p>
                             <i class="mdi mdi-menu-down d-none d-sm-block"></i>
@@ -317,7 +308,7 @@
                         aria-labelledby="profileDropdown">
                         <h6 class="p-3 mb-0">Profile</h6>
                         <div class="dropdown-divider"></div>
-                        
+
                         @if(Auth::user()->user_type== 1)
                         <a class="dropdown-item preview-item" href="{{url('/admin/admin/edit',Auth::user()->id)}}">
                             <div class="preview-thumbnail">
