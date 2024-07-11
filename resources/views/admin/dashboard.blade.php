@@ -14,8 +14,7 @@
             </div>
         </div>
         @if(Auth::user()->user_type == 1)
-            <div class="row">
-                <div class="col-12">
+            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Debug Info</h5>
