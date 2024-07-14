@@ -89,9 +89,9 @@ class UserController extends Controller
 
 
     public function updateuser($id, Request $request){
-        $request()->validate([
-            'email' => 'required|email|unique:users,email,'.$id
-        ]);
+        // $request()->validate([
+        //     'email' => 'required|email|unique:users,email,'.$id
+        // ]);
 
         $user = User::getSingle($id);
         $user->name = trim($request->name);
@@ -105,16 +105,8 @@ class UserController extends Controller
             // $user->profile_pic = trim($request->profile_pic);
             $user->profile_pic = 'images/'.$imageName;
         }
-        $user->blood_type = trim($request->blood_type);
-        $user->blood_pressure = trim($request->blood_pressure);
-        $user->age = trim($request->age);
-        $user->contact = trim($request->contact);
-        $user->insurance = trim($request->insurance);
-        $user->address = trim($request->address);
-        $user->height = trim($request->height);
-        $user->weight = trim($request->weight);
-        $user->allergies = trim($request->allergies);
-        $user->user_type = 3;
+        
+        $user->user_type = 2;
         $user->save();
 
         if(Auth::user()->user_type == 1){

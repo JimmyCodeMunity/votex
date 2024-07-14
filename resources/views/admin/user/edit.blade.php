@@ -37,105 +37,13 @@
                                             placeholder="Username">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Insurance <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" value="{{ old('insurance',$getRecord->insurance)}}" style="color:white"
-                                            class="form-control" name="insurance" id="exampleInputUsername1"
-                                            placeholder="Insurance">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Age <span
-                                                class="text-danger">*</span> </label>
-                                        <input type="text" value="{{ old('age',$getRecord->age)}}" style="color:white"
-                                            class="form-control" name="age" id="exampleInputUsername1"
-                                            placeholder="Age">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Allergies <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text"  value="{{ old('allergies',$getRecord->allergies)}}" style="color:white"
-                                            class="form-control" name="allergies" id="exampleInputUsername1"
-                                            placeholder="Roll Number">
-                                    </div>
-                                </div>
+                                
                             </div>
                             
-
-                            <div class="row">
-                            <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Address <span class="text-danger">*</span>
-                                        </label>
-                                        <input type="text" value="{{ old('address',$getRecord->address)}}" style="color:white"
-                                            class="form-control" name="address"  id="exampleInputUsername1"
-                                            placeholder="Address">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Blood Pressure <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text"  value="{{ old('blood_pressure',$getRecord->blood_pressure)}}" style="color:white"
-                                            class="form-control" name="blood_pressure" id="exampleInputUsername1"
-                                            placeholder="Blood Pressure">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Phone Number <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text"  value="{{ old('contact',$getRecord->contact)}}"
-                                            style="color:white" class="form-control" name="contact"
-                                            id="exampleInputUsername1" placeholder="Mobile Number">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Blood Type <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" value="{{ old('blood_type',$getRecord->blood_type)}}"
-                                            style="color:white" class="form-control" name="blood_type"
-                                            id="exampleInputUsername1" placeholder="Blood Group">
-                                    </div>
-                                </div>
-                            </div>
                             
-                            <div class="row">
-                                
-                                
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Height <span class="text-danger">*</span>
-                                        </label>
-                                        <input type="number" value="{{ old('name',$getRecord->height)}}" style="color:white"
-                                            class="form-control" name="height" required id="exampleInputUsername1"
-                                            placeholder="Height">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Weight <span
-                                                class="text-danger">*</span></label>
-                                        <input type="number" required value="{{ old('weight',$getRecord->weight)}}" style="color:white"
-                                            class="form-control" name="weight" id="exampleInputUsername1"
-                                            placeholder="Weight">
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            
+                            
                             <div class="row">
                             <div class="col-lg-6">
                                     <div class="form-group">
