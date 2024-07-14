@@ -101,9 +101,9 @@ class UserController extends Controller
     }
 
     public function updateuser($id, Request $request){
-        $request->validate([
-            'email' => 'required|email|unique:users,email,'.$id
-        ]);
+        // $request()->validate([
+        //     'email' => 'required|email|unique:users,email,'.$id
+        // ]);
 
         $user = User::getSingle($id);
         $user->name = trim($request->name);

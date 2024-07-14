@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LockscreenController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\ElectionController;
@@ -32,7 +33,9 @@ Route::get('/forgotpassword', [AuthController::class, 'forgotpassword']);
 Route::post('/forgotpassword', [AuthController::class, 'PostForgotPassword']);
 
 
-
+//lockscreen page handler
+Route::get('/lockscreen',[LockscreenController::class,'showLockscreen']);
+Route::post('/lockscreen',[LockscreenController::class,'unlock']);
 //create middleswares to protect routes and access
 //admin middle ware
 //the new laravel11 middlewares are stores in bootstrap/app.php and not in the kernel

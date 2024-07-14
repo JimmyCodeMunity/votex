@@ -321,7 +321,7 @@
                             </div>
                         </a>
                         @elseif(Auth::user()->user_type == 2)
-                        <a class="dropdown-item preview-item" href="{{url('/admin/medic/edit',Auth::user()->id)}}">
+                        <a class="dropdown-item preview-item" href="{{url('/admin/user/edit',Auth::user()->id)}}">
                             <div class="preview-thumbnail">
                                 <div class="preview-icon bg-dark rounded-circle">
                                     <i class="mdi mdi-settings text-success"></i>
